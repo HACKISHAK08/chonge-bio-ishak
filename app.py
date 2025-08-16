@@ -36,8 +36,8 @@ def encrypt_data():
     if not bio or not token:
         return jsonify({"error": "يجب إدخال كل من 'bio' و'token'"}), 400
 
-    if len(bio) >= 400:
-        return jsonify({"error": "يجب أن تكون السيرة الذاتية أقل من 400 حرفًا"}), 400
+    if len(bio) >= 300:
+        return jsonify({"error": "يجب أن تكون السيرة الذاتية أقل من 300 حرفًا"}), 400
 
     # Encryption setup
     key = bytes([89, 103, 38, 116, 99, 37, 68, 69, 117, 104, 54, 37, 90, 99, 94, 56])
@@ -86,6 +86,3 @@ def encrypt_data():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-    
-    
-    #http://localhost:5000/encrypt?bio=[البايو]&token=088ACFE377C3B650F082719A4C684988CAFB9E6430179D9150F17FF4AFAFC7070514009069CA1BCABBBCCFC57AF0703D3A6E5FBFF5C462E26C27A22013BD5600F3DAC1DAFC8F1C3B0DB80656CCCC7CB4 [توكن_الحساب] 
