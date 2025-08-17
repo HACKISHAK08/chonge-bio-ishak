@@ -36,8 +36,8 @@ def encrypt_data():
     if not bio or not token:
         return jsonify({"error": "يجب إدخال كل من 'bio' و'token'"}), 400
 
-    if len(bio) >= 190:
-        return jsonify({"error": "يجب أن تكون السيرة الذاتية أقل من 190 حرفًا"}), 400
+    if len(bio) >= 400:
+        return jsonify({"error": "يجب أن تكون السيرة الذاتية أقل من 400 حرفًا"}), 400
 
     # Encryption setup
     key = bytes([89, 103, 38, 116, 99, 37, 68, 69, 117, 104, 54, 37, 90, 99, 94, 56])
